@@ -1,0 +1,48 @@
+.booking-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.filter-card {
+  max-width: 720px;
+  margin: 0 auto 10px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(16,24,40,.06);
+}
+
+ion-item {
+  --padding-start: 12px;
+  --inner-padding-end: 8px;
+  border-radius: 10px;
+  margin: 6px 0;
+  background: #ffffff;
+  box-shadow: 0 1px 6px rgba(0,0,0,.04);
+}
+
+ion-item h2 {
+  font-weight: 700;
+  color: #0d3b66;
+  margin-bottom: 4px;
+}
+
+ion-item p {
+  margin: 0;
+}
+ion-item p.muted {
+  color: #6b7a90;
+}
+
+.no-data-wrap {
+  text-align: center;
+  margin-top: 36px;
+  color: #8a99a8;
+}
+.no-data-wrap ion-icon {
+  font-size: 42px;
+  margin-bottom: 10px;
+  color: #a3b3c4;
+}
+.primary {
+  --background: #0d47a1;
+  color: white;
+}

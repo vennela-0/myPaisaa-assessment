@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar class="primary">
+    <ion-title class="center-title">Bus Ticket Booking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="booking-container">
+
+    <div class="booking-card">
+
+      <ion-item>
+        <ion-label position="stacked">Travel Date</ion-label>
+        <ion-datetime
+          [(ngModel)]="travelDate"
+          (ionChange)="onDateChange()"
+          [min]="minDate"
+          presentation="date">
+        </ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Mobile Number</ion-label>
+        <ion-input
+          type="tel"
+          maxlength="10"
+          placeholder="Enter 10 digit mobile"
+          [(ngModel)]="mobile">
+        </ion-input>
+      </ion-item>
+
+      <h3 class="seat-title">Select Seats (Max 6)</h3>
+
+      <div class="seat-grid">
+        <div *ngFor="let seat of seats"
+             (click)="toggleSeat(seat)"
+             [ngClass]="{
+               'seat': true,
+               'selected': selectedSeats.includes(seat),
+               'booked': isSeatBooked(seat)
+             }">
+          {{ seat }}
+        </div>
+      </div>
+
+      <div class="button-group">
+        <ion-button expand="block"
+                    (click)="submitBooking()"
+                    [disabled]="!canSubmitBooking()">
+          Book Seats
+        </ion-button>
+
+        <ion-button expand="block"
+                    fill="outline"
+                    (click)="goToList()">
+          View List
+        </ion-button>
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>

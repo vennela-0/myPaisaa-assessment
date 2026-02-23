@@ -1,0 +1,7 @@
+{
+  "name": "bus-booking",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar class="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Booking List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-datetime [(ngModel)]="selectedDate" presentation="date"></ion-datetime>
+  </ion-item>
+
+  <ion-list *ngIf="getFilteredBookings().length > 0; else noData">
+    <ion-item *ngFor="let booking of getFilteredBookings()">
+      <ion-label>
+        <h2>{{ booking.mobile }}</h2>
+        <p>Date: {{ booking.travelDate }}</p>
+        <p>Seats: {{ booking.seats.join(', ') }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noData>
+    <p class="ion-text-center">No bookings found for selected date.</p>
+  </ng-template>
+</ion-content>
